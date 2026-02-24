@@ -1,0 +1,3 @@
+- Always use TypeScript strict mode
+- Follow internal naming conventions
+- Prefer async/await over promise chains

@@ -1,0 +1,43 @@
+{
+  "name": "my-extension",
+  "displayName": "My Extension",
+  "description": "Bundles and auto-applies native Copilot customization files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languageModelTools": [
+      {
+        "name": "my-extension.searchDocs",
+        "displayName": "Search Docs",
+        "modelDescription": "Searches internal documentation for relevant answers",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": { "type": "string", "description": "Search query" }
+          },
+          "required": ["query"]
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
